@@ -1,39 +1,57 @@
 # Cryptography
 
-A simple Python project demonstrating **symmetric encryption and decryption** using the `cryptography` library's **Fernet** implementation.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cryptography-Fernet-2F855A?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-Educational-1F6FEB?style=for-the-badge"/>
+</p>
 
-> **Educational Purpose:** This project is intended to demonstrate how Fernet encryption works for securely encrypting and decrypting files.
+A lightweight Python project demonstrating **Fernet-based symmetric encryption** using the `cryptography` library. The repository focuses on the core workflow of generating a secure key and using it to decrypt encrypted files, making it a good starting point for understanding modern encryption in Python.
 
-## Features
+---
 
-* Generate a secure Fernet encryption key
-* Save the generated key to a file
-* Decrypt encrypted files using the stored key
-* Beginner-friendly Python implementation
+## Why this project?
 
-## Project Structure
+Instead of relying on complex cryptography frameworks, this project keeps the implementation simple and readable while using **Fernet**, which provides authenticated AES encryption out of the box.
+
+It demonstrates:
+
+* Secure key generation
+* Symmetric encryption concepts
+* File decryption using a Fernet key
+* Clean and beginner-friendly Python code
+
+---
+
+## Repository Structure
 
 ```text
 Cryptography/
-├── GenerateKey.py    # Generates and saves a Fernet key
-├── DecryptFile.py    # Decrypts encrypted files using the key
+├── GenerateKey.py      # Generates and stores a Fernet key
+├── DecryptFile.py      # Decrypts encrypted files using the key
 └── README.md
 ```
 
-## Requirements
+---
 
-* Python 3.8+
-* `cryptography` library
+## Getting Started
 
-Install dependencies:
+### Requirements
+
+* Python 3.8 or later
+* `cryptography` package
+
+Install the dependency:
 
 ```bash
 pip install cryptography
 ```
 
+---
+
 ## Usage
 
-### 1. Generate an Encryption Key
+### Step 1 — Generate a Key
 
 Run:
 
@@ -41,25 +59,17 @@ Run:
 python GenerateKey.py
 ```
 
-This creates:
+A file named `encryption_key.txt` will be created containing a newly generated Fernet key.
 
-```text
-encryption_key.txt
-```
+### Step 2 — Configure the Decryption Script
 
-which contains the generated Fernet key.
-
-### 2. Configure the Key
-
-In `DecryptFile.py`, replace the empty key value with the generated key from `encryption_key.txt`.
-
-Example:
+Open `DecryptFile.py` and replace the placeholder with your generated key.
 
 ```python
 key = b"YOUR_GENERATED_KEY_HERE"
 ```
 
-### 3. Decrypt Files
+### Step 3 — Decrypt Files
 
 Run:
 
@@ -67,29 +77,43 @@ Run:
 python DecryptFile.py
 ```
 
-The script reads the encrypted files listed in the program, decrypts them using the Fernet key, and writes the decrypted output to:
+The script reads the configured encrypted files, decrypts them using the Fernet key, and writes the recovered content into `decryption.txt`.
 
-```text
-decryption.txt
-```
+---
 
 ## How Fernet Works
 
-Fernet provides:
+Fernet is built on modern cryptographic standards and provides:
 
-* AES encryption
-* Authentication to prevent tampering
+* AES-based symmetric encryption
+* Built-in authentication to detect tampering
+* URL-safe encoded keys
 * Secure random key generation
-* Simple API for encryption and decryption
+
+Because encryption and decryption use the same secret key, protecting the generated key is essential.
+
+---
+
+## Notes
+
+* Keep `encryption_key.txt` private.
+* Only decrypt files encrypted with the matching Fernet key.
+* The current implementation is intentionally minimal to highlight the encryption workflow.
+
+---
 
 ## Disclaimer
 
-This repository is for **educational and learning purposes only**. Only use these scripts on files you own or have explicit permission to work with.
+This repository is intended for **educational purposes** and should only be used on files and systems you own or have explicit authorization to work with.
+
+---
 
 ## Author
 
 **Shivam Sharma**
 
-* GitHub: https://github.com/fakcodr
-* YouTube: https://www.youtube.com/@fakcodr
-* Instagram: https://www.instagram.com/fakcodr
+Cybersecurity • Python • Automation
+
+* GitHub: **@fakcodr**
+* YouTube: **FakCodr**
+* Instagram: **@fakcodr**
